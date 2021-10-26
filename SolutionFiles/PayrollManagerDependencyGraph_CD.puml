@@ -1,0 +1,15 @@
+@startuml
+  
+class PayrollManager <<entry point>>
+class EmployeePaymentDistributor <<root>>
+class PayrollTracker
+class com.banking.business.payroll.client.BankClient
+class HumanResourcesClient <<root>>
+
+PayrollManager --> EmployeePaymentDistributor
+PayrollManager --> HumanResourcesClient
+EmployeePaymentDistributor --> PayrollTracker
+PayrollTracker --> com.banking.business.payroll.client.BankClient
+
+@enduml
+
