@@ -13,9 +13,8 @@ public class PayrollManager {
     }
 
     private static void runPayroll() {
-        PayrollManagerComponent dagger = DaggerPayrollManagerComponent.create();
-        EmployeePaymentDistributor employeePaymentDistributor = dagger.provideEmployeePaymentDistributor();
-        HumanResourcesClient humanResourcesClient = dagger.provideHumanResourcesClient();
+        EmployeePaymentDistributor employeePaymentDistributor = new EmployeePaymentDistributor();
+        HumanResourcesClient humanResourcesClient = new HumanResourcesClient();
 
         List<Employee> payroll = humanResourcesClient.getNextPayrollEmployees();
 

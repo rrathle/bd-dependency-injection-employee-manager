@@ -13,7 +13,7 @@ public class EmployeePaymentDistributorTest {
 
     @BeforeEach
     public void setup() {
-        employeePaymentDistributor = DaggerPayrollManagerComponent.create().provideEmployeePaymentDistributor();
+        employeePaymentDistributor = new EmployeePaymentDistributor();
     }
 
     @Test

@@ -1,6 +1,5 @@
 package main;
 
-import javax.inject.Inject;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +8,7 @@ import java.util.List;
  * Represents the client that connects to our HR system.
  */
 public class HumanResourcesClient {
-    @Inject
+
     public HumanResourcesClient() { }
 
     /**
