@@ -15,7 +15,7 @@ Every class currently instantiates its own dependencies in their constructor.
 Using the Dagger framework, update `main.PayrollManager` and classes to no longer create dependencies themselves.
 Annotate the methods and classes with the required Dagger annotations we can use it to manage our dependencies for us.
 
-##Phase 0: Before We Begin
+## Phase 0: Before We Begin
 
 In whatever medium you choose, draw out the dependency graph of this project, using the `main.PayrollManager` as the entry
 point. Any classes it creates will be the Dagger root objects of your dependency graph, and those classes' dependencies will
@@ -23,7 +23,7 @@ continue the graph.
 
 Once we are clear on the dependencies, we'll add Dagger to this project in two phases:
 
-##Phase 1: Prepare for DI
+## Phase 1: Prepare for DI
 Here we'll update our classes to inject dependencies via the class constructors, rather than letting constructors 
 instantiate dependencies themselves. This will make unit testing more manageable, and it sets us up for using Dagger 
 in the next phase.
@@ -42,7 +42,7 @@ in the next phase.
 6. Make sure the `main.EmployeePaymentDistributorTest` passes and `main.PayrollManager`'s main method executes. 
    Verify that the output of the main method pays 5 employees and our account balance is decreasing.
 
-##Phase 2: Implement DI
+## Phase 2: Implement DI
 
 We're in a better place, but what's still painful about this? For example, what if we had to start tracking
 our business's revenue? We might need a `RevenueTracker`, `RevenueBankClient`, or even more classes that we'll have 
@@ -69,7 +69,8 @@ clear the way for us to start expanding our project's functionality!
     Make sure  the output of `main.PayrollManager`'s main method is similar with phase 1's output
      we should be paying our employees and our account balance should be decreasing. 
 
-HINTs:
+HINTS:
+
 [I'm having trouble visualizing the dependency graph of the main.PayrollManager](./hints/hint_01.md)  
 [I'm getting [class] cannot be provided without an @Inject constructor or an @Provides-annotated method.](./hints/hint_02.md)  
 [I'm getting [class] cannot find symbol in IntelliJ](./hints/hint_03.md)  
