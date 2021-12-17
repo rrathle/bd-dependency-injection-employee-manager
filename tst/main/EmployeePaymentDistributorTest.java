@@ -1,7 +1,8 @@
-package com.amazon.ata.dependencyinjection.prework;
+package main;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
 
 import java.math.BigDecimal;
 
@@ -12,7 +13,7 @@ public class EmployeePaymentDistributorTest {
 
     @BeforeEach
     public void setup() {
-        employeePaymentDistributor = new EmployeePaymentDistributor();
+        employeePaymentDistributor = DaggerPayrollManagerComponent.create().provideEmployeePaymentDistributor();
     }
 
     @Test

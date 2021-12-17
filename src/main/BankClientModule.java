@@ -1,4 +1,4 @@
-package com.amazon.ata.dependencyinjection.prework;
+package main;
 
 public class BankClientModule {
 // TODO Complete module class

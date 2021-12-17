@@ -1,7 +1,6 @@
-package com.amazon.ata.dependencyinjection.prework;
+package main;
 
-import com.banking.business.payroll.client.BankClient;
-
+import javax.inject.Inject;
 import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
@@ -13,7 +12,8 @@ public class PayrollTracker {
     /**
      * Constructor for SalaryInformation class.
      */
-    public PayrollTracker() {
+    @Inject
+    public PayrollTracker(BankClient client) {
         // create our third party banking client
         bankClient = new BankClient();
     }
@@ -23,7 +23,7 @@ public class PayrollTracker {
      * retrieved from the bankClient.
      *
      * @param employee The employee that will get paid
-     * @return the updated balance after paying the provided Employee.
+     * @return the updated balance after paying the provided main.Employee.
      */
     public BigDecimal payEmployee(Employee employee) {
         BigDecimal balance =  bankClient.withdraw(employee.getSalary());

@@ -1,4 +1,4 @@
-package com.amazon.ata.dependencyinjection.prework;
+package main;
 
 import java.math.BigDecimal;
 import java.util.Objects;

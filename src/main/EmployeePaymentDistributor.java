@@ -1,15 +1,17 @@
-package com.amazon.ata.dependencyinjection.prework;
+package main;
 
+import javax.inject.Inject;
 import java.math.BigDecimal;
 
 public class EmployeePaymentDistributor {
     private PayrollTracker payrollTracker;
 
     /**
-     * Constructor for Employee class.
+     * Constructor for main.Employee class.
      */
-    public EmployeePaymentDistributor() {
-        this.payrollTracker = new PayrollTracker();
+    @Inject
+    public EmployeePaymentDistributor(PayrollTracker payrollTracker) {
+        this.payrollTracker = payrollTracker;
     }
 
     /**
