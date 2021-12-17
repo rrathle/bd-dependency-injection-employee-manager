@@ -70,9 +70,9 @@ clear the way for us to start expanding our project's functionality!
      we should be paying our employees and our account balance should be decreasing. 
 
 HINTs:
-[I'm having trouble visualizing the dependency graph of the main.PayrollManager](./hints/hint-01.md)  
-[I'm getting [class] cannot be provided without an @Inject constructor or an @Provides-annotated method.](./hints/hint-02.md)  
-[I'm getting [class] cannot find symbol in IntelliJ](./hints/hint-03.md)  
-[@Scope annotations are not allowed on @Inject constructors. Annotate the class instead.](./hints/hint-04.md)
+[I'm having trouble visualizing the dependency graph of the main.PayrollManager](./hints/hint_01.md)  
+[I'm getting [class] cannot be provided without an @Inject constructor or an @Provides-annotated method.](./hints/hint_02.md)  
+[I'm getting [class] cannot find symbol in IntelliJ](./hints/hint_03.md)  
+[@Scope annotations are not allowed on @Inject constructors. Annotate the class instead.](./hints/hint_04.md)
 
 
