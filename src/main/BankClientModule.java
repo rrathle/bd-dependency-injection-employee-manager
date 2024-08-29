@@ -1,5 +1,12 @@
 package main;
 
+import dagger.Module;
+import dagger.Provides;
+
+@Module
 public class BankClientModule {
-// TODO Complete module class
+    @Provides
+    public BankClient provideBankClient() {
+        return new BankClient();
+    }
 }

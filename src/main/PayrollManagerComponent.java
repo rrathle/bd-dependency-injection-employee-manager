@@ -1,5 +1,10 @@
 package main;
 
+import dagger.Component;
+
+@Component(modules = {BankClientModule.class})
 interface PayrollManagerComponent {
-    // TODO Complete interface
+    HumanResourcesClient provideHumanResourcesClient();
+    EmployeePaymentDistributor provideEmployeePaymentDistributor();
 }
+

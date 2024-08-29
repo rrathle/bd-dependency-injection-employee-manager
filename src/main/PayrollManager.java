@@ -2,6 +2,8 @@ package main;
 
 import java.math.BigDecimal;
 import java.util.List;
+import main.DaggerPayrollManagerComponent;
+
 
 public class PayrollManager {
     /**
@@ -9,13 +11,16 @@ public class PayrollManager {
      * @param args Main method parameter
      */
     public static void main(String[] args) {
-        runPayroll();
+        PayrollManagerComponent component = DaggerPayrollManagerComponent.create();
+
+        // Get the instances of EmployeePaymentDistributor and HumanResourcesClient from Dagger
+        EmployeePaymentDistributor employeePaymentDistributor = component.provideEmployeePaymentDistributor();
+        HumanResourcesClient humanResourcesClient = component.provideHumanResourcesClient();
+
+        // Run the payroll using the injected dependencies
+        runPayroll(employeePaymentDistributor, humanResourcesClient);
     }
-
-    private static void runPayroll() {
-        EmployeePaymentDistributor employeePaymentDistributor = new EmployeePaymentDistributor();
-        HumanResourcesClient humanResourcesClient = new HumanResourcesClient();
-
+    private static void runPayroll(EmployeePaymentDistributor employeePaymentDistributor, HumanResourcesClient humanResourcesClient) {
         List<Employee> payroll = humanResourcesClient.getNextPayrollEmployees();
 
         for (Employee employee : payroll) {
